@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 from groq import Groq
 import plotly.graph_objects as go
-
+import os
 
 class App:
     def load_average_laptop(self) -> Dict[str, Dict[str, Union[str, float]]]:
@@ -75,7 +75,9 @@ class App:
             scoring_info (Dict[str, float]): Dictionary containing grading results.
         """
         scoring_info = {}
-        client = Groq(api_key="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")
+        client = Groq(
+            api_key=os.environ.get('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')
+        )
 
         prompt = f'''
             Rate the following laptop configuration on a scale of 0-10 in terms of gaming, software development, video editing, general use, graphic design, data science:
