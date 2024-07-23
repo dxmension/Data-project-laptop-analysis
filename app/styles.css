@@ -10,7 +10,7 @@
   color: #fff;
   cursor: pointer;
   font-size: 100%;
-  height: 80px;
+  height: 50px;
   line-height: 1.15;
   margin: 12px 0 0;
   outline: none;
@@ -46,7 +46,7 @@
   color: #fff;
   cursor: pointer;
   font-size: 100%;
-  height: 80px;
+  height: 50px;
   line-height: 1.15;
   margin: 12px 0 0;
   outline: none;
@@ -69,4 +69,16 @@
 
 .ef3psqc12:focus {
   box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+.laptop-container {
+  height: 60vh;
+  width: 300px;
+  border: 1px solid #fff;
+  margin: auto;
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
