@@ -92,3 +92,6 @@ Information was initially stored in JSON file, but I decided to switch to storin
 
 #### The output of the Data Collection step is CSV document containing 3000+ laptop models with 21 column indicating feature of the product
 </p>
+
+## Data Organization
+Data cleansing is a crucial process in data science that involves identifying and correcting (or removing) errors and inconsistencies in data to improve its quality. This process ensures that the dataset is accurate, complete, and reliable for analysis.
