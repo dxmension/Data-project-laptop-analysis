@@ -68,18 +68,37 @@ Before development and Data Analysis step, we are in high demand for data.
 * Defines custom headers to mimic human interaction with the website and avoid being blocked.
   
   ![](https://github.com/dxmension/Data-project-laptop-analysis/blob/main/assets/5264826213891955301.jpg)
-
-* Defining Asynchronous Function
-  * request_with_retries(url, headers, session, retries=10)
+  
+**Defining Asynchronous Function**
+* request_with_retries(url, headers, session, retries=10)
     Makes HTTP requests with retries and exponential backoff to handle CAPTCHA and network issues.
 
   ![](https://github.com/dxmension/Data-project-laptop-analysis/blob/main/assets/5262702996809178717.jpg)
     
-  * parse_item_card(item): Parses an individual item card to extract laptop information such as ID, title, prices, specifications, and image link.
-  * parse_listing(url, session): Parses the listing page to extract all item cards and their information. Returns a list of dictionaries containing laptop information and the BeautifulSoup object of the page.
-  * get_next_page_url(soup): Finds the URL of the next page from the current page's HTML content.
-  * save_csv(product_list, name="laptops.csv"): Saves the product list to a CSV file using pandas.
-Executing the Full Scraping Process:
+* parse_item_card(item)
+    Parses an individual item card to extract laptop information such as ID, title, prices, specifications, and image link.
+
+  ![](https://github.com/dxmension/Data-project-laptop-analysis/blob/main/assets/9af03364-0272-44dc-8596-d6d86e1b1734.jpg)
+  
+* parse_listing(url, session)
+    Parses the listing page to extract all item cards and their information. Returns a list of dictionaries containing laptop information and the BeautifulSoup object of the page.
+
+
+  
+* get_next_page_url(soup)
+    Finds the URL of the next page from the current page's HTML content.
+
+
+
+  
+* save_csv(product_list, name="laptops.csv")
+    Saves the product list to a CSV file using pandas.
+
+
+
+  
+
+**Executing the Full Scraping Process**
 
 execute_full_scraping(url): Orchestrates the full scraping process:
 Initializes the starting URL and an empty list for laptops.
