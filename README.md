@@ -83,21 +83,9 @@ Before development and Data Analysis step, we are in high demand for data.
 * parse_listing(url, session)
     Parses the listing page to extract all item cards and their information. Returns a list of dictionaries containing laptop information and the BeautifulSoup object of the page.
 
+  ![](https://github.com/dxmension/Data-project-laptop-analysis/blob/main/assets/5264826213891955329.jpg)
 
   
-* get_next_page_url(soup)
-    Finds the URL of the next page from the current page's HTML content.
-
-
-
-  
-* save_csv(product_list, name="laptops.csv")
-    Saves the product list to a CSV file using pandas.
-
-
-
-  
-
 **Executing the Full Scraping Process**
 
 execute_full_scraping(url): Orchestrates the full scraping process:
