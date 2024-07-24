@@ -65,8 +65,10 @@ Before development and Data Analysis step, we are in high demand for data.
 **Setting Up Configuration**:
 
 * Configures the logging format and level.
+  ![](https://github.com/dxmension/Data-project-laptop-analysis/blob/main/assets/5264826213891955301.jpg)
 * Defines custom headers to mimic human interaction with the website and avoid being blocked.
-* Defining Asynchronous Functions:
+* Defining Asynchronous Function
+  
 
 request_with_retries(url, headers, session, retries=10): Makes HTTP requests with retries and exponential backoff to handle CAPTCHA and network issues.
 parse_item_card(item): Parses an individual item card to extract laptop information such as ID, title, prices, specifications, and image link.
