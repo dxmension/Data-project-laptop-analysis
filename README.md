@@ -90,5 +90,5 @@ Before development and Data Analysis step, we are in high demand for data.
 
 Information was initially stored in JSON file, but I decided to switch to storing info in Python dictionaries and then convert them into pandas dataframes to speed up process of CSV saving.
 
-
+#### The output of the Data Collection step is CSV document containing 3000+ laptop models with 21 column indicating feature of the product
 </p>
