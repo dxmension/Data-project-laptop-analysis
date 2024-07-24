@@ -65,6 +65,7 @@ Before development and Data Analysis step, we are in high demand for data.
 **Setting Up Configuration**:
 
 * Configures the logging format and level.
+  
   ![](https://github.com/dxmension/Data-project-laptop-analysis/blob/main/assets/5264826213891955301.jpg)
 * Defines custom headers to mimic human interaction with the website and avoid being blocked.
 * Defining Asynchronous Function
