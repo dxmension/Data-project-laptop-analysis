@@ -3,7 +3,7 @@ import streamlit as st
 from groq import Groq
 from PIL import Image
 import pandas as pd
-import plotly.graph_objects as go
+import plotly.express as px
 
 
 st.set_page_config(layout="centered")
@@ -43,12 +43,35 @@ def assess_laptop(config: Dict[str, str]) -> Dict[str, float]:
     for idx, item in enumerate(response, start=1):
         if item:
             key, val = item.split(" - ")
-            scoring_info[key[2:]] = float(val)
+            scoring_info[key[2:]] = [float(val)]
 
     return scoring_info
     
-def load_laptop():
-    pass
+def load_laptop(config: Dict[str, str]) -> Dict[str, str]:
+    
+    df = pd.read_csv("data/laptops_data.csv")
+
+
+    laptop = df[df["gpu_brand"] == config["GPU"].split()[0]].sample(n=1)
+    laptop["Name"] = df["brand"] + " " +  df["model"]
+    laptop["CPU"] = df["cpu_brand"] + " " + df["cpu_model"]
+    laptop["SSD/HDD Capacity"] = df["hdd_capacity"] + df["ssd_capacity"]
+
+    laptop.rename(columns={"gpu": "GPU",
+                        "display_diagonal": "Display Size",
+                        "resolution": "Resolution",
+                        "ram": "RAM"}, inplace=True)
+    
+    laptop["Display Size"] = laptop["Display Size"].astype('object')
+    laptop["RAM"] = laptop["RAM"].astype('object')
+    laptop["SSD/HDD Capacity"] = laptop["SSD/HDD Capacity"].astype('object')
+
+    laptop = laptop[["Name", "GPU", "CPU", "Display Size", "Resolution", "RAM", "SSD/HDD Capacity"]]
+
+    laptop_config = laptop.to_dict('records')[0]
+
+    return laptop_config
+    
 
 def get_laptop_config(user_prompt: str) -> Dict[str, str]:
     
@@ -146,8 +169,31 @@ def show_laptop_card(config: Dict[str, str]) -> None:
 
 def show_charts(config: Dict[str, str]) -> None:
     with st.container(height=600, border=True):
+        similar_laptop_cfg = load_laptop(config)
+
+ 
         cfg_scoring = assess_laptop(config=config)
-        st.write(cfg_scoring)
+        cfg_scoring_1 = assess_laptop(config=similar_laptop_cfg)
+
+        df1 = pd.DataFrame(cfg_scoring)
+        df1 = df1.transpose().reset_index()
+        df1.columns = ["Category", "Value"]
+        df1 = df1.sort_values(by="Value")
+
+        df2 = pd.DataFrame(cfg_scoring_1)
+        df2 = df2.transpose().reset_index()
+        df2.columns = ["Category", "Value"]
+        df2 = df2.sort_values(by="Value")
+
+        fig = px.bar(df1, y="Category", x="Value", color="Category")
+
+        fig.update_layout(showlegend=False)
+        fig.update_yaxes(title="")
+        fig.update_xaxes(title="")
+
+        st.header(f"General Assessment of {config["Name"]}")
+        st.plotly_chart(fig)
+        
 
 def execute_recomendation():
     prompt = get_prompt()
