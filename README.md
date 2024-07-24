@@ -7,4 +7,5 @@
 ## Objective
 The Marketing Lead of KZ Laptop Trader Company found that revenue of the business had decreased significantly in the first quarter of year. CEO of the company also started raising concerns about the sales deduction. They decided to hire Data Analyst (me) to handle the situation.
 * What is the key factor affecting laptop price?
-To answer the question we need extract key information from **data** that could not be provided by the company due to the database access issues. 
+<p>To answer the question we need extract key information from **data** that could not be provided by the company due to the database access issues. </p>
+<p>We accepted such a challenge</p>
