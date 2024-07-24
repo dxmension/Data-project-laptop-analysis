@@ -45,3 +45,12 @@ The Marketing Lead of KZ Laptop Trader Company found that revenue of the busines
     <td>Streamlit, plotly, OpenAI</td>
   </tr>
 </table>
+
+## Data Collection
+Before development and Data Analysis step, we are in high demand for data.
+<p>It means that we need to collect it and save somewhere</p>
+<p>Nowadays there are tons of methods how to extract information, using API, online web crawlers, etc. But to showcase our skills to requesters, I wanted to approach the problem using my exisiting knowledge in python packages enabling us to scrape data from websites</p>
+#### BeautifulSoup
+**Beautiful Soup** is a library that makes it easy to scrape information from web pages. It sits atop an HTML or XML parser, providing Pythonic idioms for iterating, searching, and modifying the parse tree.
+
+
