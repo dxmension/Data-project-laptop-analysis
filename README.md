@@ -88,13 +88,7 @@ Before development and Data Analysis step, we are in high demand for data.
   
 **Executing the Full Scraping Process**
 
-execute_full_scraping(url): Orchestrates the full scraping process:
-Initializes the starting URL and an empty list for laptops.
-Opens an asynchronous session with ClientSession.
-Logs the start time and initiates scraping up to a maximum of 100 pages.
-For each page, it logs the page number, parses the listing page, extracts laptop information, and updates the URL to the next page.
-Handles delays between requests using asyncio.sleep with a random interval to avoid being blocked.
-If the next page URL is not found, it logs an error and stops.
-Saves the collected data to a CSV file.
-Logs the end time and total time taken for scraping.
+Information was initially stored in JSON file, but I decided to switch to storing info in Python dictionaries and then convert them into pandas dataframes to speed up process of CSV saving.
+
+
 </p>
