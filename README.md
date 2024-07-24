@@ -11,7 +11,21 @@ The Marketing Lead of KZ Laptop Trader Company found that revenue of the busines
 <p>We accepted such a challenge!</p>
 <p>The final request was stated as following: 
 <ul>
-<li>Provide key metrics affecting laptop prices</li>
+<li>Provide key metrics affecting laptop prices (in .pptx or jupyter notebook wih code samples)</li>
 <li>Create recomendational system to extract laptop models that could be potentially purchased</li>
 </ul>
 </p>
+
+## Stages
+* Data Collection
+* Data Organization
+* Data Analysis
+* Development
+
+### Tools
+<table>
+  <tr>
+    <td>Stage Step</td>
+    <td>Tech Stack</td>
+  </tr>
+</table>
