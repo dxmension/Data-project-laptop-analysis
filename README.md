@@ -65,13 +65,17 @@ Before development and Data Analysis step, we are in high demand for data.
 **Setting Up Configuration**:
 
 * Configures the logging format and level.
+* Defines custom headers to mimic human interaction with the website and avoid being blocked.
   
   ![](https://github.com/dxmension/Data-project-laptop-analysis/blob/main/assets/5264826213891955301.jpg)
-* Defines custom headers to mimic human interaction with the website and avoid being blocked.
-* Defining Asynchronous Function
-  
 
-request_with_retries(url, headers, session, retries=10): Makes HTTP requests with retries and exponential backoff to handle CAPTCHA and network issues.
+* Defining Asynchronous Function
+  * request_with_retries(url, headers, session, retries=10)
+    Makes HTTP requests with retries and exponential backoff to handle CAPTCHA and network issues.
+
+  ![](https://github.com/dxmension/Data-project-laptop-analysis/blob/main/assets/5262702996809178717.jpg)
+    
+
 parse_item_card(item): Parses an individual item card to extract laptop information such as ID, title, prices, specifications, and image link.
 parse_listing(url, session): Parses the listing page to extract all item cards and their information. Returns a list of dictionaries containing laptop information and the BeautifulSoup object of the page.
 get_next_page_url(soup): Finds the URL of the next page from the current page's HTML content.
