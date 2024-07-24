@@ -10,6 +10,6 @@ The Marketing Lead of KZ Laptop Trader Company found that revenue of the busines
 <p>To answer the question we need extract key information from **data** that could not be provided by the company due to the database access issues. </p>
 <p>We accepted such a challenge!</p>
 <p>The final request was stated as following: 
-* Provide key metrics affecting laptop prices 
-* Create recomendational system to extract laptop models that could be potentially purchased
+*Provide key metrics affecting laptop prices 
+*Create recomendational system to extract laptop models that could be potentially purchased
 </p>
