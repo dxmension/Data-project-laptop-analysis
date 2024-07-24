@@ -51,7 +51,37 @@ Before development and Data Analysis step, we are in high demand for data.
 <p>It means that we need to collect it and save somewhere</p>
 <p>Nowadays there are tons of methods how to extract information, using API, online web crawlers, etc. But to showcase our skills to requesters, I wanted to approach the problem using my exisiting knowledge in python packages enabling us to scrape data from websites</p>
 
-## BeautifulSoup
+#### BeautifulSoup
 **Beautiful Soup** is a library that makes it easy to scrape information from web pages. It sits atop an HTML or XML parser, providing Pythonic idioms for iterating, searching, and modifying the parse tree.
+<p>As a main website from where we will extract data is KZ Electronics Shop ("Belyi Veter").</p>
+<p>To perform web scrapping, we need to 
+<ul>
+  <li>Make HTTP requests on URL</li>
+  <li>Get inner HTML content</li>
+  <li>Parse through the content tree to extract required information</li>
+</ul>
+<p>In more programmatical language, we made following steps:
+  
+**Setting Up Configuration**:
 
+* Configures the logging format and level.
+* Defines custom headers to mimic human interaction with the website and avoid being blocked.
+* Defining Asynchronous Functions:
 
+request_with_retries(url, headers, session, retries=10): Makes HTTP requests with retries and exponential backoff to handle CAPTCHA and network issues.
+parse_item_card(item): Parses an individual item card to extract laptop information such as ID, title, prices, specifications, and image link.
+parse_listing(url, session): Parses the listing page to extract all item cards and their information. Returns a list of dictionaries containing laptop information and the BeautifulSoup object of the page.
+get_next_page_url(soup): Finds the URL of the next page from the current page's HTML content.
+save_csv(product_list, name="laptops.csv"): Saves the product list to a CSV file using pandas.
+Executing the Full Scraping Process:
+
+execute_full_scraping(url): Orchestrates the full scraping process:
+Initializes the starting URL and an empty list for laptops.
+Opens an asynchronous session with ClientSession.
+Logs the start time and initiates scraping up to a maximum of 100 pages.
+For each page, it logs the page number, parses the listing page, extracts laptop information, and updates the URL to the next page.
+Handles delays between requests using asyncio.sleep with a random interval to avoid being blocked.
+If the next page URL is not found, it logs an error and stops.
+Saves the collected data to a CSV file.
+Logs the end time and total time taken for scraping.
+</p>
