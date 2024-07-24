@@ -28,4 +28,20 @@ The Marketing Lead of KZ Laptop Trader Company found that revenue of the busines
     <td>Stage Step</td>
     <td>Tech Stack</td>
   </tr>
+  <tr>
+    <td>Data Collection</td>
+    <td>requests, beautifulSoup4, assyncio</td>
+  </tr>
+  <tr>
+    <td>Data Organization</td>
+    <td>Pandas, Numpy</td>
+  </tr>
+  <tr>
+    <td>Data Analysis</td>
+    <td>seaborn, Plotly, matplotlib, pandas</td>
+  </tr>
+  <tr>
+    <td>Development</td>
+    <td>Streamlit, plotly, OpenAI</td>
+  </tr>
 </table>
