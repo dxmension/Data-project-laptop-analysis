@@ -95,3 +95,23 @@ Information was initially stored in JSON file, but I decided to switch to storin
 
 ## Data Organization
 Data cleansing is a crucial process in data science that involves identifying and correcting (or removing) errors and inconsistencies in data to improve its quality. This process ensures that the dataset is accurate, complete, and reliable for analysis.
+
+The general process looks as following:
+
+**Data Inspection**:
+* Uploading CSV file and inspect dataset thoroughly
+
+![](https://github.com/dxmension/Data-project-laptop-analysis/blob/main/assets/5265003840854417965.jpg)
+
+As the result of the inspection, total 2000+ datapoints were missing, no outliers and anomalies were found.
+
+**Handling Missing Values**:
+
+* Necessary datapoints were dropped, but mostly missing values were overwritten with central tendency measures of grouped laptops (grouping was based on the brand and CPU/GPU models)
+    
+The main and unsolved challenge is handling price feature: sometimes website owners do not update prices of products, and as a result scraper cannot collect info about it. Several methods were tried, but none of them could provide quality solution.
+* Train regression model to predict missing prices on very small set of data entries (result: overfitting with trained data) - imbalancy between seen and unseen splits
+* Overwrite NaNs with mode, median, or mean values for grouped laptops by brand name, cpu, gpu - outliers due to the imbalancy between splits as well
+* Fill NaN with prompts to OpenAI API (most efficient, but unreliable in terms of data), so I decided to skip that step
+
+## Exploratory Data Analysis (EDA)
