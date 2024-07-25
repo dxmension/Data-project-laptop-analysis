@@ -112,16 +112,7 @@ async def parse_item_card(item: BeautifulSoup) -> Dict[str, str]:
     return laptop_info
 
 async def parse_listing(url: str, session: ClientSession) -> Tuple[List[Dict[str, str]], Optional[BeautifulSoup]]:
-    """
-    Parse the listing page to extract all item cards.
 
-    Args:
-        url (str): The URL of the listing page.
-        session (ClientSession): The aiohttp session.
-
-    Returns:
-        Tuple[List[Dict[str, str]], Optional[BeautifulSoup]]: A list of dictionaries containing laptop information and the BeautifulSoup object of the page.
-    """
     products: List[Dict[str, str]] = []
 
     response = await request_with_retries(url, CUSTOM_HEADERS, session)

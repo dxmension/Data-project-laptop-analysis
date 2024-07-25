@@ -4,14 +4,14 @@ from groq import Groq
 from PIL import Image
 import pandas as pd
 import plotly.express as px
-
+import os
 
 st.set_page_config(layout="centered")
 
 with open("styles.css", "r") as file:
     st.markdown(f"<style>{file.read()}</style>", unsafe_allow_html=True)
 
-CLIENT = Groq(api_key="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")
+CLIENT = Groq(api_key=os.environ["GROQ_API_KEY"])
 
 
 def assess_laptop(config: Dict[str, str]) -> Dict[str, float]:
@@ -171,7 +171,6 @@ def show_charts(config: Dict[str, str]) -> None:
     with st.container(height=600, border=True):
         similar_laptop_cfg = load_laptop(config)
 
- 
         cfg_scoring = assess_laptop(config=config)
         cfg_scoring_1 = assess_laptop(config=similar_laptop_cfg)
 
