@@ -114,4 +114,23 @@ The main and unsolved challenge is handling price feature: sometimes website own
 * Overwrite NaNs with mode, median, or mean values for grouped laptops by brand name, cpu, gpu - outliers due to the imbalancy between splits as well
 * Fill NaN with prompts to OpenAI API (most efficient, but unreliable in terms of data), so I decided to skip that step
 
+#### The result of Data Organization and appropriate Feature Engineering is a cleaned dataset
+
+![](https://github.com/dxmension/Data-project-laptop-analysis/blob/main/assets/5265003840854417978.jpg)
+
+
+
 ## Exploratory Data Analysis (EDA)
+Exploratory Data Analysis (EDA) is a crucial step in the data analysis process. It involves summarizing the main characteristics of a dataset often using visual methods. EDA helps in understanding the data, uncovering patterns, spotting anomalies, testing hypotheses, and checking assumptions through statistical summaries and graphical representations. 
+
+During EDA stage, some critical patterns and findings were identified using graphical and statistical methods:
+
+* The most expensive brand is Apple, while the most popular brand is HP
+* On average, gaming laptops are considerably higher in price than ordinary laptops due to the premium component
+* The higher video standards, the higher price of laptops with the most expensive on UltraHD 4k+
+* Basically, AMD is the best both GPU and CPU option from cost-performance perspective
+* SSD and RAM configurations strongly affect price of a laptop with the highest Pearson correlation coefficient (~0.75)
+* Operating system has no notable impact  on the laptop price, moreover, the picture becomes unclear, when DOS laptops cost higher than those of with OS
+* Most laptops are equipped with NVIDIA with higher price, while mostly laptops use integrated graphics.
+
+<a href="https://github.com/dxmension/Data-project-laptop-analysis/blob/main/scraper/project-2-laptop-configuration.ipynb">Jupyter Notebook</a> to see each stage in details
