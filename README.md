@@ -135,3 +135,15 @@ During EDA stage, some critical patterns and findings were identified using grap
 * Most laptops are equipped with NVIDIA with higher price, while mostly laptops use integrated graphics.
 
 <a href="https://github.com/dxmension/Data-project-laptop-analysis/blob/main/scraper/project-2-laptop-configuration.ipynb">Jupyter Notebook</a> to see each stage in details
+
+
+## Development
+
+Requesters also wanted to see a recommendational system to properly purchase laptops under their preferences.
+
+Therefore, it was decided to create Streamlit Application that includes several features:
+* Laptop Configurator
+* Laptop Assessment
+* Laptop Recommendation
+
+**TODO: Finish implementing all functions in app directory and change README file accordingly**
