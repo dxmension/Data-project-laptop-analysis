@@ -74,7 +74,7 @@ def assess_laptop(config: Dict[str, Dict[str, Union[str, float]]]) -> Dict[str, 
     """
     scoring_info = {}
     client = Groq(
-        api_key='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')
+        api_key=os.environ["GROQ_API_KEY"])
     
 
     prompt = f'''
